@@ -48,6 +48,8 @@ def check_number_valid(board, number, position):
             if board[i][j] == number and (i, j) != position:
                 return False
 
+    return True
+
 def print_board(board):
 
     for i in range(9):
