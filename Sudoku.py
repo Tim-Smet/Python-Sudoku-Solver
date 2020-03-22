@@ -1,4 +1,4 @@
-board = [
+sudoku = [
     [0,7,0,0,0,9,8,0,2],
     [6,8,0,0,5,0,1,3,0],
     [0,2,0,0,1,0,0,6,0],
@@ -10,7 +10,7 @@ board = [
     [0,4,7,9,0,5,0,8,6]
 ]
 
-def print_board(sudoku):
+def print_board(board):
 
     for i in range(9):
         if i % 3 == 0 and i != 0:
@@ -21,8 +21,15 @@ def print_board(sudoku):
                 print(" | ", end="")
 
             if j == 8:
-                print(sudoku[i][j])
+                print(board[i][j])
             else:
-                print(str(sudoku[i][j]) + " ", end="")
+                print(str(board[i][j]) + " ", end="")
 
-print_board(board)
+print_board(sudoku)
+
+def find_zero(board):
+    for i in range(9):
+        for j in range(9):
+            if board[i][j] == 0:
+                return (i, j)
+
